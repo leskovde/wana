@@ -1,4 +1,4 @@
-# WANA -Web Server Analyser
+# WANA - Web Server Analyser
 
 WANA is a log file analysing script. It filters these files and provides the user with a complete analysis based on his needs.
 

@@ -63,7 +63,7 @@ The script returns 0 whenever it runs successfuly. Otherwise it returns 1 accomp
 ### Examples
 
 ```
-$ ./wana -a "2019-02-22 09:00:00" -b "2019-02-22 09:44:54" example.log 
+$ ./wana.sh -a "2019-02-22 09:00:00" -b "2019-02-22 09:44:54" example.log 
 147.229.13.201 - - [22/Feb/2019:09:24:33 +0100] "-" 408 3275 "-" "-" 
 147.229.13.201 - - [22/Feb/2019:09:24:33 +0100] "-" 408 3275 "-" "-" 
 198.27.69.191 - - [22/Feb/2019:09:43:13 +0100] "GET / HTTP/1.1" 200 22311 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0" 
@@ -72,7 +72,7 @@ $ ./wana -a "2019-02-22 09:00:00" -b "2019-02-22 09:44:54" example.log
 198.27.69.191 - - [22/Feb/2019:09:44:07 +0100] "GET / HTTP/1.1" 200 22313 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0" 
 198.27.69.191 - - [22/Feb/2019:09:44:37 +0100] "GET /?up_auto_log=true HTTP/1.1" 200 22315 "-" "Mozilla/5.0 (Windows NT 6.1; rv:36.0) Gecko/20100101 Firefox/36.0"
 
-$ ./wana -ip 2001:67c:1220:808::93e5:8ad hist-load example.log.1 
+$ ./wana.sh -ip 2001:67c:1220:808::93e5:8ad hist-load example.log.1 
 2019-02-21 08:00 (1): # 
 2019-02-21 10:00 (1): # 
 2019-02-21 14:00 (1): # 

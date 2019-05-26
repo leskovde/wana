@@ -51,16 +51,28 @@ The format is YYYY-MM-DD HH:00. Total timespan is based on either input or filte
 
 The script does not modify any files. It also does not create any temporary files.
 
-IP address follows the RFC 1884-2.2 format; therefore it can be either IPv4, IPv6, or IPv6 compressed.
+IP address follows the RFC 1884 2.2 format; therefore it can be either IPv4, IPv6, or IPv6 compressed.
 
 The script does not take the significance of any IP address into consideration. IP addresses are distinguished based on their alphanumerical representation.
 
 The script does not take time zones into consideration. It presumes that every log has its timestamp in the same time zone.
 
+## Return Value
+The script returns 0 whenever it runs successfuly. Otherwise it returns 1 accompanied by a message that specifies the error.
+
 ### Examples
 
 ```
-$ ./wana -ip 2001:67c:1220:808::93e5:8ad hist-load ios-example.com.access.log.1 
+$ ./wana -a "2019-02-22 09:00:00" -b "2019-02-22 09:44:54" example.log 
+147.229.13.201 - - [22/Feb/2019:09:24:33 +0100] "-" 408 3275 "-" "-" 
+147.229.13.201 - - [22/Feb/2019:09:24:33 +0100] "-" 408 3275 "-" "-" 
+198.27.69.191 - - [22/Feb/2019:09:43:13 +0100] "GET / HTTP/1.1" 200 22311 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0" 
+198.27.69.191 - - [22/Feb/2019:09:43:24 +0100] "GET / HTTP/1.1" 200 22313 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0" 
+198.27.69.191 - - [22/Feb/2019:09:43:42 +0100] "GET /?gf_page=upload HTTP/1.1" 200 22304 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0" 
+198.27.69.191 - - [22/Feb/2019:09:44:07 +0100] "GET / HTTP/1.1" 200 22313 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0" 
+198.27.69.191 - - [22/Feb/2019:09:44:37 +0100] "GET /?up_auto_log=true HTTP/1.1" 200 22315 "-" "Mozilla/5.0 (Windows NT 6.1; rv:36.0) Gecko/20100101 Firefox/36.0"
+
+$ ./wana -ip 2001:67c:1220:808::93e5:8ad hist-load example.log.1 
 2019-02-21 08:00 (1): # 
 2019-02-21 10:00 (1): # 
 2019-02-21 14:00 (1): # 
